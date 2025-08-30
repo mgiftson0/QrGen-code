@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import requests
 import qrcode
 from io import BytesIO
 import base64
@@ -25,14 +24,16 @@ def scan_url():
         )
         qr.add_data(url)
         qr.make(fit=True)
-        img = qr.make_image(fill='black', back_color='white')
-
+        
+        # Create an image from the QR Code instance
+        img = qr.make_image(fill_color="black", back_color="white")
+        
         # Convert the QR code image to a byte stream
         buffer = BytesIO()
-        img.save(buffer, format="PNG")
+        img.save(buffer, "PNG")  # Remove format parameter, just specify format in method name
         buffer.seek(0)
-
-        # Return only the QR code URL
+        
+        # Return the QR code as base64
         return jsonify({
             "qr_code_url": "data:image/png;base64," + base64.b64encode(buffer.getvalue()).decode('utf-8')
         })
