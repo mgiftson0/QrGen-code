@@ -55,7 +55,7 @@ app = Flask(__name__)
 # Configure CORS for production
 CORS(app, origins=[
     "http://localhost:3000",
-    "https://your-vercel-app.vercel.app",  # Replace with your Vercel URL
+    "https://your-vercel-app.vercel.app",  
     "https://*.vercel.app"
 ])
 
