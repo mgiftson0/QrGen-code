@@ -55,7 +55,7 @@ app = Flask(__name__)
 # Configure CORS for production
 CORS(app, origins=[
     "http://localhost:3000",
-    "https://your-vercel-app.vercel.app",  
+    "https://qr-gen-code-two.vercel.app",  
     "https://*.vercel.app"
 ])
 
