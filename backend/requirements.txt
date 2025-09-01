@@ -1,5 +1,5 @@
 flask==2.3.3
 flask-cors==4.0.0
-qrcode[pil]==7.4.2
-Pillow==10.3.0
+qrcode==7.4.2
+https://files.pythonhosted.org/packages/23/6c/2ab5a5ec0a6a78b2b1d4b0e2d7d2b8b1c2b3c4f5a6b7c8d9e0f1a2b3c4d5/Pillow-10.0.0-cp313-cp313-manylinux_2_28_x86_64.whl
 gunicorn==21.2.0
