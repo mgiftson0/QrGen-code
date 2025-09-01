@@ -70,7 +70,8 @@ function Home() {
     setIsLoading(true);
     
     try {
-      const response = await fetch('http://localhost:5000/scan', {
+      // Updated to use your Render backend URL
+      const response = await fetch('https://qrgen-code-729b.onrender.com/scan', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -80,7 +81,7 @@ function Home() {
 
       // Handle connection errors
       if (response.status >= 500) {
-        throw new Error('Server is not responding. Please make sure the backend is running on port 5000.');
+        throw new Error('Server is not responding. Please try again later.');
       }
       
       const data = await response.json();
@@ -100,7 +101,7 @@ function Home() {
       setResult(newResult);
       setScanHistory(prev => [newResult, ...prev.slice(0, 9)]); // Keep last 10 scans
     } catch (error) {
-      setError(error.message);
+      setError(error.message || 'Failed to connect to the server. Please check your internet connection and try again.');
     } finally {
       setIsLoading(false);
     }
