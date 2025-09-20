@@ -70,7 +70,7 @@ function Home() {
     setIsLoading(true);
     
     try {
-      // Updated to use your Render backend URL
+      // Updated to\\ use your Render backend URL
       const response = await fetch('https://qrgen-code-729b.onrender.com/scan', {
         method: 'POST',
         headers: {
